@@ -1,8 +1,6 @@
-
 user_input = input("Enter something: ")
 result_1_1 = user_input.replace(" ", "-")
 print(result_1_1)
-
 
 splitted = user_input.split()
 print(splitted)
