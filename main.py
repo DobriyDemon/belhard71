@@ -9,3 +9,4 @@ text = "python is more awesome than java"
 a = text.split(sep=" ", maxsplit=2) #split by space and maxsplit 2 times, also have a right split(rsplit)
 
 # LISTS
+
