@@ -1,11 +1,6 @@
-# text = "python" #string
-# text = r"python/" #raw string? without escape commands for strings
-# print(text[1:6:2]) #start, stop, step
+num1 = input("Enter the first number: ")
+num2 = input("Enter the second number: ")
+num3 = input("Enter the third number: ")
+medium_arithmetic = (int(num1) + int(num2) + int(num3)) / 3
+print(f"The arithmetic mean is: {round(medium_arithmetic, 3)}")
 
-# print(text + " " + text) #concatenate
-# print(text * 3) #replication, if 0 then empty string
-
-text = "python is more awesome than java"
-a = text.split(sep=" ", maxsplit=2) #split by space and maxsplit 2 times, also have a right split(rsplit)
-
-# LISTS
