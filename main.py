@@ -6,19 +6,15 @@ num_M = int(input("Enter the number M: "))
 list_of_output_nums = []
 list_on_fife = []
 
-for i in range(cout_of_output_nums):
-    if i > more_than_K:
-        print("i is more than K: ")
-        if i % num_M == 0:
-            print("i is a multiple of M: ")
-            if len(list_on_fife) <= 5:
-                list_on_fife.append(i)
-                print("list_on_fife <=5: ", list_on_fife)
-            else:
+for i in range(round(cout_of_output_nums/5)):
+    for j in range(cout_of_output_nums):
+        if j > more_than_K and j % num_M == 0:
+            if len(list_on_fife) == 5:
+                copy = list_on_fife.copy()
+                print("Copy", copy)
+                list_of_output_nums.append(copy)
                 list_on_fife.clear()
-                list_on_fife.append(i)
-
-                print("list_on_fife if list <=5(else): ", list_on_fife)
-            list_of_output_nums.append(list_on_fife)
-            print("list_of_output_nums: ", list_of_output_nums)
-print(list_of_output_nums)
+            list_on_fife.append(j)
+    list_of_output_nums.append(list_on_fife)
+print("List on fife: ", list_on_fife)
+print("List of output values", list_of_output_nums)
