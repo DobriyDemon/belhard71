@@ -1,4 +1,4 @@
-# Created Homework branch for the main file
+# Lesson_5_2 (Calculator)
 print("Calculator!")
 num1 = int(input("Enter first number: "))
 action = input("Enter action: ")
