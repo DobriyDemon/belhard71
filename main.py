@@ -16,5 +16,7 @@ elif action == "**":
     result = num1 ** num2
 elif action == "%":
     result = num1 % num2
+elif action == "//":
+    result = num1 // num2
 
 print("Result: ",num1, action, num2, "=", result)
