@@ -29,7 +29,7 @@
 # function(1, 2, 3)
 # function(1,2,3, b=4)
 
-#TODO check stirng is polindrone
+# check stirng is polindrone
 text = input("Enter text: ")
 def is_polindrone(text: str) -> bool:#Tell that we need to input string and return bool
     return text.lower() == text.lower()[::-1]
