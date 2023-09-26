@@ -6,6 +6,6 @@ list_of_fife = []
 for i in range(2, int(input("Enter end of range: ")) + 1, 2):
     list_of_fife.append(i)
     if len(list_of_fife) >= 5:
-        print(list_of_fife)
+        joined = ", ".join(str(x) for x in list_of_fife)
+        print(joined)
         list_of_fife.clear()
-
