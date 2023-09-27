@@ -1,6 +1,6 @@
 # Created Homework branch for the main file
 # Task 4
-list_of_data = ['English', 12, 'Russian', (56, 54, 52, 50), {'name': 'John'}, 'Italian', False]
+list_of_data = ['English', 12, 'Russian', (56, 54, 52, 50), {'name': 'John'}, 'Italian']
 
 
 def sort_strings_only(list_of_data):
