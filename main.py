@@ -1,5 +1,5 @@
 # Task 1
-string = input('Enter a decimal number: ')
+string = input('Enter a decimal number:  ')
 
 
 def str_to_int(string):
