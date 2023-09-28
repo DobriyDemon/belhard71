@@ -5,4 +5,7 @@
     <orderEntry type="jdk" jdkName="Python 3.11 (Belhard_Akademy)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="5939fc11-694f-4429-b359-d1f1f98536ad" />
+  </component>
 </module>
