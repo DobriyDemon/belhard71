@@ -9,3 +9,4 @@ user_input_slide_of_list = int(input("Enter the count of slide: "))
 for i in range(len(list_of_nums)):
     list_of_nums[i] = list_of_nums[i] + user_input_slide_of_list
 print(list_of_nums)
+
