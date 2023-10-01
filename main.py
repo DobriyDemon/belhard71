@@ -3,10 +3,8 @@
 list_of_data = ['English', 12, 'Russian', (56, 54, 52, 50), {'name': 'John'}, 'Italian']
 
 
-def sort_strings_only(list_of_data):
-    return sorted(filter(lambda x: type(x) == str, list_of_data))
+def filter_strings(lst):
+    return ' '.join(str(x) for x in lst if isinstance(x, str))
 
 
-print(sort_strings_only(list_of_data))
-
-sort_strings_only(list_of_data)
+print(filter_strings(lst = list_of_data))
