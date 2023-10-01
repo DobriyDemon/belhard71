@@ -118,60 +118,66 @@ text = input("Enter message: ")
 text = text.upper()
 action = input("Enter action(encode/decode): ")
 action = action.upper()
+translated = ""
 
 
-def translate(
-    text: str,
-    timed_string="",
-) -> str:
-    global translated
+def translate(text: str, timed_string="", translated="", action: str = "") -> str:
     if action == "ENCODE":
-        # Encode methods
-        if language == "RUS":
-            translated = ""
-            for letter in text:
-                if letter != " ":
-                    translated += MORSE_CODE_DICT_RUS[letter] + " "
-                else:
-                    translated += "/ "
-            print(translated)
-        elif language == "ENG":
-            translated = ""
-            for letter in text.upper():
-                if letter != " ":
-                    translated += MORSE_CODE_DICT_ENG[letter] + " "
-                else:
-                    translated += "/ "
-            print(translated)
+        print(encode(text=text, translated=translated))
+
     elif action == "DECODE":
-        # Decode methods
-        if language == "RUS":
-            translated = ""
-            for symbol in text:
-                if symbol != " ":
-                    timed_string += symbol
-                else:
-                    if symbol == "/":
-                        timed_string += " "
-                    translated += MORSE_CODE_REVERSED_RUS[timed_string]
-                    timed_string = ""
-            if timed_string != "":
+        print(decode(text=text, timed_string=timed_string, translated=translated))
+    else:
+        print("!_Wrong action_!\n" "Action must be 'ENCODE' or 'DECODE'")
+
+
+def encode(text: str, translated="") -> str:
+    if language == "RUS":
+        translated = ""
+        for letter in text:
+            if letter != " ":
+                translated += MORSE_CODE_DICT_RUS[letter] + " "
+            else:
+                translated += "/ "
+        print(translated)
+    elif language == "ENG":
+        translated = ""
+        for letter in text.upper():
+            if letter != " ":
+                translated += MORSE_CODE_DICT_ENG[letter] + " "
+            else:
+                translated += "/ "
+        print(translated)
+
+
+def decode(text: str, timed_string="", translated="") -> str:
+    if language == "RUS":
+        translated = ""
+        for symbol in text:
+            if symbol != " ":
+                timed_string += symbol
+            else:
+                if symbol == "/":
+                    timed_string += " "
                 translated += MORSE_CODE_REVERSED_RUS[timed_string]
-            print(translated)
-        elif language == "ENG":
-            translated = ""
-            for symbol in text:
-                if symbol != " ":
-                    timed_string += symbol
-                else:
-                    if symbol == "/":
-                        timed_string += " "
-                    translated += MORSE_CODE_REVERSED_ENG[timed_string]
-                    timed_string = ""
-            if timed_string != "":
+                timed_string = ""
+        if timed_string != "":
+            translated += MORSE_CODE_REVERSED_RUS[timed_string]
+        print(translated)
+    elif language == "ENG":
+        translated = ""
+        for symbol in text:
+            if symbol != " ":
+                timed_string += symbol
+            else:
+                if symbol == "/":
+                    timed_string += " "
                 translated += MORSE_CODE_REVERSED_ENG[timed_string]
-            print(translated)
-            return translated
+                timed_string = ""
+        if timed_string != "":
+            translated += MORSE_CODE_REVERSED_ENG[timed_string]
+        print(translated)
+        return translated
 
 
-translate(text)
+translate(text, timed_string="", translated="", action=action)
