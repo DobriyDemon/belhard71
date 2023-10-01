@@ -133,7 +133,6 @@ def translate(text: str, timed_string="", translated="", action: str = "") -> st
 
 def encode(text: str, translated="") -> str:
     if language == "RUS":
-        translated = ""
         for letter in text:
             if letter != " ":
                 translated += MORSE_CODE_DICT_RUS[letter] + " "
@@ -152,7 +151,6 @@ def encode(text: str, translated="") -> str:
 
 def decode(text: str, timed_string="", translated="") -> str:
     if language == "RUS":
-        translated = ""
         for symbol in text:
             if symbol != " ":
                 timed_string += symbol
