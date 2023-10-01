@@ -10,6 +10,8 @@ cities = \
 countries = list(cities.keys())
 user_input = input("Enter a city: ")
 
-for key, value in cities.items():
-    if user_input in value:
-        print(f"{user_input.title()} in the {key}")
+
+def find_country(cities: dict, user_input: str):
+    for key, value in cities.items():
+        if user_input in value:
+            print(f"{user_input.title()} in the {key}")
