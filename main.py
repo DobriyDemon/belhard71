@@ -15,6 +15,8 @@ dict_users = \
 
     }
 
-for id, user_data in dict_users.items():
-    if 'email' not in user_data or user_data['email'] == '':
-        print("Name: ", user_data['name'])
+
+def find_none_email(dict_users):
+    for id, user_data in dict_users.items():
+        if 'email' not in user_data or user_data['email'] == '':
+            print("Name: ", user_data['name'])
