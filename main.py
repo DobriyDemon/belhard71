@@ -9,7 +9,7 @@
 
 # Example:
 class Car:
-    def __init__(self, model, horsepower):
+    def __init__(self, model, horsepower):  # Initialised default object values
         self.model = model
         self.horsepower = horsepower
         self.speed = 0
@@ -37,3 +37,11 @@ class ElectricCar(Car):
 # Polymorphism(переопределение родительских частей внутри дочерних, не меняя родительский класс) - used only for add functionality parent class, and !NEVER! change parent class and it's attributes
 # Так же для запрета использования родительских атрибутов в дочерних, with use of "raise exception"  in method
 # super().__init__(model, horsepower) - при наследовании передает родительские атрибуты в родительский класс
+
+
+# Solid
+# S - Principe single responsibility
+# O - Принцип открытости/закрытости
+# L - Принцип подстановки Барбары Лисков
+# I - Принцип разделения интерфейсов
+# D - Принцип инверсии зависимостей
