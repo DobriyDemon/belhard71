@@ -22,3 +22,6 @@
 # loads and dumbs - with string
 # load and dump - with bytes
 # csv_file has delimeter - splitter between strings
+
+
+# Library PYDANTIC
