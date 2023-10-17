@@ -4,12 +4,13 @@ from sqlalchemy import (
     Column,
     INT,
     VARCHAR,
-    BOOLEAN,
     CheckConstraint,
     ForeignKey,
     create_engine,
 )
 from sqlalchemy.orm import DeclarativeBase, Relationship
+
+connection = create_engine("sqlite:///Lesson11_Main.db")
 
 
 class Base(DeclarativeBase):
@@ -19,7 +20,7 @@ class Base(DeclarativeBase):
 class Statuses(Base):
     __tablename__ = "statuses"
     __tableargs__ = CheckConstraint("name IS NOT NULL")
-    id = Column(INT, ForeignKey("id"))
+    id = Column(INT, primary_key=True)
     name = Column(VARCHAR(100), nullable=False, unique=True)
 
 
@@ -27,11 +28,11 @@ class Orders(Base):
     __tablename__ = "Orders"
     __tableargs__ = CheckConstraint("user_id IS NOT NULL")
     id = Column(INT, primary_key=True)
-    user_id = Column(INT, ForeignKey("user_id"))
-    status_id = Relationship("Statuses", back_populates="id")
+    user_id = Column(INT)
+    status_id = Column(INT, ForeignKey())
 
 
-Base.metadata.create_all()
+Base.metadata.create_all(connection)
 
 
 class Users(Base):
